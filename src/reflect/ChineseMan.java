@@ -1,9 +1,22 @@
 package reflect;
 
-public class ChineseMan extends Man implements Comparable{
+@Hero
+public class ChineseMan extends Man implements Comparable {
+    public ChineseMan(int age, String name) {
+        this.age = age;
+        this.name = name;
+    }
+
     private int age = 30;
+    @People
     public String name = "YSL";
 
+    interface face {
+    }
+
+    public void  shoeMethod(String s){
+        System.out.println(s);
+    }
     public int getAge() {
         return age;
     }
@@ -20,6 +33,7 @@ public class ChineseMan extends Man implements Comparable{
         this.name = name;
     }
 
+
     @Override
     public void saySomething() {
         System.out.println("这里是子类ChineseMan的saySomething方法");
@@ -28,5 +42,13 @@ public class ChineseMan extends Man implements Comparable{
     @Override
     public int compareTo(Object o) {
         return 0;
+    }
+
+    @Override
+    public String toString() {
+        return "ChineseMan{" +
+                "age=" + age +
+                ", name='" + name + '\'' +
+                '}';
     }
 }
